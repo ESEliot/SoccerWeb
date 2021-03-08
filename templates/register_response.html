@@ -1,0 +1,17 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block registrationsuccessfulsection %}
+    <div class="jumbotron" id="welcomejumbo">
+  <h1 class="display-4">Thank You <em>{{ form.data.name }}</em></h1>
+  <p class="lead">You have registered to Little Star. You are now able to get involved in customization of soccer matches </p>
+  <hr class="my-4">
+  <p>Check out all Activities and match making here:</p>
+  <a class="btn btn-primary btn-lg" id="welcomebtn" href="/matchMake" role="button">Match Maker</a>
+    <a class="btn btn-primary btn-lg" id="welcomebtn" href="/activities" role="button">Activities</a>
+</div>
+
+{% endblock %}

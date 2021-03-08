@@ -1,0 +1,83 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+MatchMAKER
+{% endblock %}
+
+{% block addprojectbtn %}
+    <div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"><a href="/createproject"><button type="button" class="btn btn-success" id="buttoncreateproject"><h1>Match Me</h1></button></div></a>
+    <div class="col"></div>
+    </div>
+{% endblock %}
+
+{% block projectsList %}
+
+  <div class="container">
+
+      <div class="row">
+        <div class="col">
+          <h2>Search for a match:</h2>
+        <div class="md-form mt-0">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </div>
+      </div>
+      </div>
+
+
+    <h1>All projects:</h1>
+  <div class="row">
+  <div class="col">
+    <div class="card mb-3">
+      <img src="https://images.megapixl.com/5786/57869429.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a href="#"><h5 class="card-title">leg day everyday</h5></a>
+        <p class="card-text">Activities outstanding</p>
+        <p class="card-text"><small class="text-muted">Player name, Match date</small></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col">
+    <div class="card mb-3">
+      <img src="https://vassets.ea.com/Assets/Richmedia/Image/Billboard/messi_street_outnow.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a href="#"><h5 class="card-title">Fifa street</h5></a>
+        <p class="card-text">We want to organize a match in the streets of montreal</p>
+        <p class="card-text"><small class="text-muted">Player name, Match date</small></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col">
+    <div class="card mb-3">
+      <img src="https://previews.123rf.com/images/cybercrime/cybercrime1105/cybercrime110500014/9488765-a-soccer-ball-lying-in-the-sand-on-the-beach.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a href="#"><h5 class="card-title">Soccer sand</h5></a>
+        <p class="card-text">Tired of green grass? Welcome your white sand!</p>
+        <p class="card-text"><small class="text-muted">Player name, Match date</small></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+  <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+  </div>
+    </div>
+
+{% endblock %}

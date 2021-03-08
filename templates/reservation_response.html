@@ -1,0 +1,15 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+Reservation response
+{% endblock %}
+
+{% block registrationsuccessfulsection %}
+    <div class="jumbotron" id="welcomejumbo">
+  <h1 class="display-4">Your reservation has been sent, we are waiting for you <em>{{ form.data.name }}</em></h1>
+    <h1 class="display-4">Your time is <em>{{ form.data.time }}</em></h1>
+    <h1 class="display-4">The number of people is of <em>{{ form.data.people }}</em></h1>
+
+</div>
+
+{% endblock %}

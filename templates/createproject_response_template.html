@@ -1,0 +1,18 @@
+{% extends "base_template.html" %}
+
+
+
+{% block title %} Create a Project {% endblock %}
+
+{% block introductionjumbotron %}{% endblock %}
+
+{% block registrationsuccessfulsection %}
+    <div class="jumbotron" id="welcomejumbo">
+  <h1 class="display-4">Thank You,  <em>{{ form.name.data }}</em></h1>
+  <p class="lead">Your customized match has been submitted. Our team leaders will analyze it and post it within this week!</p>
+  <hr class="my-4">
+  <p>While here, why not check the activities and match making</p>
+  <a class="btn btn-primary btn-lg" id="welcomebtn" href="/matchMake" role="button">Match Maker</a>
+    <a class="btn btn-primary btn-lg" id="welcomebtn" href="/activities" role="button">Activities</a>
+</div>
+{% endblock %}

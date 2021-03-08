@@ -1,0 +1,69 @@
+{% extends "base_template.html" %}
+
+{% block title %} Create your personalized Match {% endblock %}
+
+{% block jumbotitle %}Create a Match{% endblock %}
+{% block jumbodescription %}Create your ideal match with your favorite position and place, other players will see your match {% endblock %}
+
+{% block createprojectform %}
+    <div class="container">
+    <div class="col">
+        {% from 'includes/_formhelpers.html' import render_field %}
+    <form action="/createproject" method="POST">
+        {{ form.csrf_token }}
+      {{ form.hidden_tag() }}
+  <div class="form-group">
+    <label>Let us have some matches </label>
+    {{ render_field(form.name, class_="form-control") }}
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Which position matches you the most??</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option value="form.matchChoices.o1">Goalkeeper</option>
+        <option value="form.matchChoices.o2">Center Back</option>
+        <option value="form.matchChoices.o3">Striker</option>
+        <option value="form.matchChoices.o4">Attacking Midfielder</option>
+        <option value="form.matchChoices.o5">Box-to-Box Midfielder</option>
+        <option value="form.matchChoices.o6">Holding Midfielder</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description of your tactics:</label>
+      {{ render_field(form.description, class_="form-control", rows_="5") }}
+  </div>
+  <div class="form-group">
+      {{ render_field(form.file, class_="form-control-file") }}
+  </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {{ form.submit }}
+    <br>
+
+  <br>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      <div class="alert alert-warning">
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+      </div>
+  {% endif %}
+{% endwith %}
+  {% if form.errors %}
+      <br>
+      <br>
+      <div class="alert alert-warning">
+    <ul >
+        {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+            {% for error in field_errors %}
+                <li>{{ form[field_name].label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endif %}
+        </div>
+</form>
+    </div>
+    </div>
+{% endblock %}

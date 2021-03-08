@@ -1,0 +1,68 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+Reservation
+{% endblock %}
+
+
+{% block content %}
+ <!-- Dark opaque section -->
+  <div class="py-5 photo-overlay" id="book" style="background-image: url(https://miro.medium.com/max/4000/1*8AQNEdBn39A48Fyi08N7Ww.jpeg);" >
+    <div class="container">
+    {% from 'includes/_formhelpers.html' import render_field %}
+        <form action="/reservation" method="POST">
+            <div class="row">
+                <div class="col-md-3"> </div>
+                     <div class="col-lg-6 p-3 animate-in-down">
+                         <form class="p-4 bg-dark-opaque" >
+                             <h4 class="mb-4 text-center">Make a reservation</h4>
+            <p class="my-4">Interested in playing in the Little Star? We hold general tryout camps, but our teams travel across North America .Please fill this form to make a reservation.</p>
+      {{ form.csrf_token }}
+      {{ form.hidden_tag() }}
+      <div class="text-light bg-dark">
+          {{ render_field(form.name, class_="form-control") }}
+    </div>
+      <div class="text-light bg-dark">
+          {{ render_field(form.time, class_="form-control") }}
+    </div>
+    <div class="text-light bg-dark">
+        {{ render_field(form.people, class_="form-control") }}
+    </div>
+          <button type="submit" class="btn mt-4 btn-block p-2 btn-outline-primary"><b>Send reservation</b></button>
+      {{ form.submit }}
+  <br>
+  <br>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      <div class="alert alert-warning">
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+      </div>
+  {% endif %}
+{% endwith %}
+  {% if form.errors %}
+      <br>
+      <br>
+      <div class="alert alert-warning">
+    <ul >
+        {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+            {% for error in field_errors %}
+                <li>{{ form[field_name].label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endif %}
+      </div>
+  </form>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+

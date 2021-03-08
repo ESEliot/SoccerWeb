@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <title>{% block title %}{% endblock %} - Little Star</title>
+  {% block html_head %}{% endblock %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="base_template.css">
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="elegant.css" type="text/css">
+    <script src="https://kit.fontawesome.com/95bb56355c.js" crossorigin="anonymous"></script>
+    <script src="js/navbar-ontop.js"></script>
+  <!-- Script: Animated entrance -->
+  <script src="js/animate-in.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar-expand-md navbar-dark bg-dark navbar fixed-top" >
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation" style=""> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item mx-1">
+            <a class="nav-link text-light" href="littleStar"><b>Little Star</b></a>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="activities"><b>Activites</b></a>
+          </li>
+            <li class="nav-item mx-4">
+            <a class="nav-link" href="aboutus"><b>About us</b></a>
+          </li>
+
+             <li class="nav-item mx-2">
+        <a class="btn navbar-btn btn-secondary mx-2" href="reservation"><b>BOOK a free reservation</b></a>
+             </li>
+
+
+           <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Forum
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="champions">Soccer background and Champions league</a>
+          <a class="dropdown-item" href=matchMake>Match maker</a>
+          <a class="dropdown-item" href="login">Sign Up / Log In</a>
+        </div>
+          </li>
+
+            <!--Log out button when a user signs in -->
+              {% if name %}
+    <li class="nav-item">
+    <a class="nav-link"  href="/">{{name}}</a>
+      </li>
+            <li class="nav-item">
+    <a class="nav-link"  href="/logout">Log Out</a>
+      </li>
+    {% endif %}
+      {% if username=='admin' %}
+          <li class="nav-item">
+    <a class="nav-link"  href="/userstable">Users</a>
+      {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- End Navbar -->
+
+  <div id="test">
+      {% block content %}{% endblock %}
+  </div>
+
+  {% block introductionjumbotron %}
+  <!-- Page Intro jumbotron -->
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-4">{% block jumbotitle %}{% endblock %}</h1>
+      <p class="lead">{% block jumbodescription %}{% endblock %}</p>
+    </div>
+  </div>
+  <!-- End Challenges jumbotron -->
+{% endblock %}
+
+  <!--%% classes inheritance-->
+
+  {% block loginform %}
+{% endblock %}
+
+{% block registrationform %}
+{% endblock %}
+
+{% block registrationsuccessfulsection %}
+{% endblock %}
+
+{% block createprojectform %}
+{% endblock %}
+
+{% block userstable %}
+{% endblock %}
+
+{% block addprojectbtn %}
+{% endblock %}
+
+{% block learnmorejumbo %}
+{% endblock %}
+
+{% block libprez %}
+{% endblock %}
+
+{% block searchform %}
+{% endblock %}
+
+{% block newrow %}
+{% endblock %}
+
+{% block aboutussection %}
+{% endblock %}
+
+{% block projectsList %}
+{% endblock %}
+
+ <!-- Footer -->
+  <div class="text-center" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 p-4">
+          <h2 class="mb-4">Contact</h2>
+          <p class="m-0">
+            <a href="tel:+246 - 542 550 5462" class="text-white"></a>+15145678908</p>
+          <p>
+            <a href="mailto:littlestarsoen287@gmail.com" class="text-white"></a>littlestarsoen287@gmail.com</p>
+        </div>
+        <div class="col-md-4 p-4">
+          <h2 class="mb-4">Location</h2>
+          <p contenteditable="true">
+            <a href="https://goo.gl/maps/e3T6moc3jayMekHYA" >1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8<br></a></p>
+        </div>
+        <div class="col-md-4 p-4">
+          <h2 class="mb-4">Openings</h2>
+          <p>10:00 - 19:00&nbsp; Tue/Fri <br>11:00 - 20:00&nbsp; Sat/Sun</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-3">
+          <p class="text-center text-muted">© Copyright 2020 LittleStar- All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript dependencies -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Script: Smooth scrolling between anchors in the same page -->
+  <script src="js/smooth-scroll.js"></script>
+</body>
+</html>

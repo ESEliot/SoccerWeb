@@ -1,0 +1,46 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+Reservation
+{% endblock %}
+
+
+{% block content %}
+<body>
+{% block jumbotitle %}Users Database{% endblock %}
+{% block jumbodescription %}{% endblock %}
+
+{% block userstable %}
+
+    <div class="container">
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Name</th>
+        <th scope="col">Password(Hashed)</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for user in users_list %}
+    <tr>
+    <th scope="row">{{ loop.index }}</th>
+        {% for data in user %}
+      <td>{{ data }}</td>
+            {% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+    </div>
+
+
+{% endblock %}
+
+</body>
+
+
+{% endblock %}
+
