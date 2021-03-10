@@ -12,7 +12,7 @@ follow up with the major events happening at the same time could benifit from th
       > set FLASK_APP=app
       > flask run
       ```
-    - Mac
+  - Mac
       ```
       $ export FLASK_APP=app
       $ flask run
