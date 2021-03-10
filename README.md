@@ -5,7 +5,7 @@ follow up with the major events happening at the same time could benifit from th
 # Guide
 
   - Download the zip file
-  - Open terminal or commandlinea, go to the file:
+  - Open commandline or terminal and go to the file:
   
   - Windows
       ```
