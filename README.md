@@ -17,6 +17,8 @@ follow up with the major events happening at the same time could benifit from th
       $ export FLASK_APP=app
       $ flask run
       ```
-   
+
 # Software used 
 Python(flask), HTML, CSS
+
+Make sure of downloading the latest software version
