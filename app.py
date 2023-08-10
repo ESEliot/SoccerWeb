@@ -313,7 +313,7 @@ class ReservationForm(FlaskForm):
 def reservation():
     form1 = ReservationForm(request.form)
     if form1.validate_on_submit():
-        print('hello zbi')
+        print('hello hi')
         return render_template('reservation_response.html', name=session.get('name'), username=session.get('username'),
                                form=form1)
     print('bye')
